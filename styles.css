@@ -1,0 +1,241 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  padding: 20px 0;
+  color: #fff;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo h1 {
+  font-size: 24px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #4CAF50; /* Hover effect */
+}
+
+header nav ul li a.active {
+  color: #4CAF50; /* Active link color */
+}
+
+header nav ul li a.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #4CAF50; /* Highlight active link */
+  margin-top: 5px;
+}
+
+/* Blurred background when section is active */
+.blur-background {
+  filter: blur(5px);
+  transition: filter 0.5s ease;
+}
+
+/* Active section highlight */
+.active-section {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+.hero-section {
+  background: #4CAF50;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 50px;
+}
+
+.hero-section p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.about-section, .features-section, .download-section {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.slider-section {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.swiper {
+  height: 400px; /* Adjust height as needed */
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  color: var(--white-100); /* Change according to your theme */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.feature-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 16px;
+}
+
+.download-section {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.download-section h2 {
+  font-size: 36px;
+}
+
+.download-section p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #fff;
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.download-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-align: center;
+  }
+
+  header nav ul.active {
+    display: flex;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
